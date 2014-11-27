@@ -141,7 +141,7 @@ dir <%=@datadir%>
 # slaveof <ip> <port>
 <%= "slaveof #{@slaveof['address']} #{@slaveof['port']}" unless @slaveof.nil? %>
 
-<%= "slave-read-only #{@slavereadonly}" unless @slavereadonly.nil? %>
+<%= "slave-read-only #{node['redisio']['default_settings']['slavereadonly']}" unless node['redisio']['default_settings']['slavereadonly'].nil? %>
 
 # If the master is password protected (using the "requirepass" configuration
 # directive below) it is possible to tell the slave to authenticate before
